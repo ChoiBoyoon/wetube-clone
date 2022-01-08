@@ -1,4 +1,10 @@
-extends base.pug
+extends base
+include mixins/video
 
 block content  
     h1 Home
+
+    each video in videos
+        +video(video)
+    else
+        li nothing found
